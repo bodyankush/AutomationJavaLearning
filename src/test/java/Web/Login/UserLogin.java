@@ -19,7 +19,6 @@ public class UserLogin {
         if (DashboardElementsPage.dashboardHat.shouldBe(visible, Duration.ofSeconds(5)).isDisplayed()) {
             System.out.println("logged in");
         } else {
-            System.out.println("some shit ain't working");
             Selenide.screenshot("loginFlowPositive - FAILED");
         }
     }
