@@ -1,4 +1,4 @@
-package web.search;
+package Web.search;
 import pages.MainPage;
 import pages.SearchResultsPage;
 import com.codeborne.selenide.Selenide;
