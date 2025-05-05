@@ -5,17 +5,16 @@ import com.codeborne.selenide.Selenide;
 import org.testng.annotations.*;
 
 public class SearchHeadphones {
-    SearchResultsPage searchResultsPage = new SearchResultsPage();
     @BeforeMethod
     public void openSite(){
         Selenide.open("https://ek.ua/ua/");
     }
     @Test
     public void headphonesFounded(){
-        MainPage.searchField.setValue("Навушники");
-        MainPage.searchButton.click();
-        searchResultsPage.shouldHaveTitle("Навушники");
-        searchResultsPage.ShouldHaveItemsCount(24);
-        searchResultsPage.ShouldHavePaginationCountMoreThan(3);
+        MainPage.SearchComponent.searchField.setValue("Навушники");
+        MainPage.SearchComponent.searchButton.click();
+        SearchResultsPage.HeaderComponent.shouldHaveTitle("Навушники");
+        SearchResultsPage.ListOfItemsComponent.ShouldHaveItemsCount(24);
+        SearchResultsPage.PaginationComponent.ShouldHavePaginationCountMoreThan(3);
     }
 }
