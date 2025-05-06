@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.io.IOException;
 
 public class BaseTest {
-    protected static String baseUrl;
+    public static String baseUrl;
 
     static {
         try (InputStream input = BaseTest.class.getClassLoader().getResourceAsStream("config.properties")) {

@@ -5,10 +5,12 @@ import pages.SearchResultsPage;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.*;
 
-public class SearchHeadphones extends BaseTest {
+public class SearchHeadphones {
 
     @BeforeMethod
-    public void openSite() {Selenide.open(baseUrl);}
+    public void openSite() {
+        Selenide.open(BaseTest.baseUrl); // Use static reference from BaseTest
+    }
 
     @Test
     public void headphonesFounded(){
