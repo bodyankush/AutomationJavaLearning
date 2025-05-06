@@ -18,7 +18,7 @@ public class SearchResultsPage {
     }
 
     public static class ListOfItemsComponent {
-        private static final ElementsCollection amountOfItems = $$x("//div[contains(@class, 'model-short-div list-item--goods   ')]");
+        private static final ElementsCollection amountOfItems = $$x("//div[contains(@class, 'model-short-div list-item--goods')]");
         public static void ShouldHaveItemsCount (int expectedItemsCount) {
             amountOfItems.shouldHave(size(expectedItemsCount));
         }
