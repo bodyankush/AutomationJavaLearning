@@ -9,7 +9,7 @@ public class SearchHeadphones {
 
     @BeforeMethod
     public void openSite() {
-        Selenide.open(BaseTest.baseUrl); // Use static reference from BaseTest
+        Selenide.open(BaseTest.baseUrl);
     }
 
     @Test
