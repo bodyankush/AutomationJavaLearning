@@ -1,14 +1,15 @@
 package Web.search;
+import Base.BaseTest;
 import pages.MainPage;
 import pages.SearchResultsPage;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.*;
 
-public class SearchHeadphones {
+public class SearchHeadphones extends BaseTest {
+
     @BeforeMethod
-    public void openSite(){
-        Selenide.open("https://ek.ua/ua/");
-    }
+    public void openSite() {Selenide.open(baseUrl);}
+
     @Test
     public void headphonesFounded(){
         MainPage.SearchComponent.searchField.setValue("Навушники");
@@ -17,4 +18,5 @@ public class SearchHeadphones {
         SearchResultsPage.ListOfItemsComponent.ShouldHaveItemsCount(24);
         SearchResultsPage.PaginationComponent.ShouldHavePaginationCountMoreThan(3);
     }
+
 }
