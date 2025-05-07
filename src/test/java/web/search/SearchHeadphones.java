@@ -17,9 +17,9 @@ public class SearchHeadphones {
     public void headphonesFounded(){
         MainPage.SearchComponent.searchField.setValue("Навушники");
         MainPage.SearchComponent.searchButton.click();
-        SearchResultsPage.HeaderComponent.shouldHaveTitle("Навушники");
-        SearchResultsPage.ListOfItemsComponent.ShouldHaveItemsCount(24);
-        int pageCount = SearchResultsPage.PaginationComponent.lastPaginationCount(); assertTrue(pageCount > 3);
+        SearchResultsPage.HeaderComponent.pageTitle.getText().equals("Навушники");
+        assert SearchResultsPage.ListOfItemsComponent.amountOfItems.size() == 24;
+        assertTrue(SearchResultsPage.PaginationComponent.lastPaginationCount() > 3);
     }
 
 }
