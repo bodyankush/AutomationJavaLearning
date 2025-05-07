@@ -1,4 +1,5 @@
 package Web.search;
+
 import Base.BaseTest;
 import pages.MainPage;
 import pages.SearchResultsPage;
@@ -7,19 +8,23 @@ import org.testng.annotations.*;
 import static org.testng.AssertJUnit.*;
 
 public class SearchHeadphones {
+    public SearchResultsPage searchResultsPageObject = new SearchResultsPage();
+    public MainPage mainPageObject = new MainPage();
 
     @BeforeMethod
+
     public void openSite() {
         Selenide.open(BaseTest.baseUrl);
     }
 
     @Test
+
     public void headphonesFounded(){
-        MainPage.SearchComponent.searchField.setValue("Навушники");
-        MainPage.SearchComponent.searchButton.click();
-        SearchResultsPage.HeaderComponent.pageTitle.getText().equals("Навушники");
-        assert SearchResultsPage.ListOfItemsComponent.amountOfItems.size() == 24;
-        assertTrue(SearchResultsPage.PaginationComponent.lastPaginationCount() > 3);
+        mainPageObject.searchObject.searchField.setValue("Навушники");
+        mainPageObject.searchObject.searchButton.click();
+        searchResultsPageObject.headerObject.pageTitle.getText().equals("Навушники");
+        assert searchResultsPageObject.listOfItemsObject.amountOfItems.size() == 24;
+        assertTrue(searchResultsPageObject.paginationObject.lastPaginationCount() > 3);
     }
 
 }
