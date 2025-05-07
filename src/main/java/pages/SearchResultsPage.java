@@ -25,11 +25,11 @@ public class SearchResultsPage {
         }
 
     }
-    public static class PaginationComponent {
+        public static class PaginationComponent {
         private static final SelenideElement lastPaginationButton = $x("(//div[@class='ib page-num']//a[text() and not(@id='pager_dots')])[last()]");
 
-        public static void ShouldHavePaginationCountMoreThan(int minPageCount){
-            int actualCount = Integer.parseInt(lastPaginationButton.getText());
+        public static int lastPaginationCount (){
+            return Integer.parseInt(lastPaginationButton.getText());
         }
 
     }

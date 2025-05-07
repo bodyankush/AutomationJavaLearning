@@ -4,6 +4,7 @@ import pages.MainPage;
 import pages.SearchResultsPage;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.*;
+import static org.testng.AssertJUnit.*;
 
 public class SearchHeadphones {
 
@@ -18,7 +19,7 @@ public class SearchHeadphones {
         MainPage.SearchComponent.searchButton.click();
         SearchResultsPage.HeaderComponent.shouldHaveTitle("Навушники");
         SearchResultsPage.ListOfItemsComponent.ShouldHaveItemsCount(24);
-        SearchResultsPage.PaginationComponent.ShouldHavePaginationCountMoreThan(3);
+        int pageCount = SearchResultsPage.PaginationComponent.lastPaginationCount(); assertTrue(pageCount > 3);
     }
 
 }
