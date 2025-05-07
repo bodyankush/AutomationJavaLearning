@@ -1,5 +1,7 @@
 package Base;
 
+import com.codeborne.selenide.Selenide;
+import org.testng.annotations.BeforeMethod;
 import java.util.Properties;
 import java.io.InputStream;
 import java.io.IOException;
@@ -16,4 +18,10 @@ public class BaseTest {
             throw new RuntimeException(e);
         }
     }
+    @BeforeMethod
+
+    public void openSite() {
+        Selenide.open(BaseTest.baseUrl);
+    }
+
 }

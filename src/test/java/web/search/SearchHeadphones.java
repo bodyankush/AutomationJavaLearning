@@ -7,16 +7,9 @@ import com.codeborne.selenide.Selenide;
 import org.testng.annotations.*;
 import static org.testng.AssertJUnit.*;
 
-public class SearchHeadphones {
+public class SearchHeadphones extends BaseTest {
     public SearchResultsPage searchResultsPageObject = new SearchResultsPage();
     public MainPage mainPageObject = new MainPage();
-
-    @BeforeMethod
-
-    public void openSite() {
-        Selenide.open(BaseTest.baseUrl);
-    }
-
     @Test
 
     public void headphonesFounded(){
