@@ -5,7 +5,7 @@ import components.searchResultsComponents.ListOfItemsComponent;
 import components.searchResultsComponents.PaginationComponent;
 
 public class SearchResultsPage {
-    public HeaderComponent headerObject = new HeaderComponent();
-    public ListOfItemsComponent listOfItemsObject = new ListOfItemsComponent();
-    public PaginationComponent paginationObject = new PaginationComponent();
+    public HeaderComponent header = new HeaderComponent();
+    public ListOfItemsComponent productsList = new ListOfItemsComponent();
+    public PaginationComponent pagination = new PaginationComponent();
 }

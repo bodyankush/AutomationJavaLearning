@@ -10,14 +10,14 @@ import static org.testng.AssertJUnit.*;
 public class SearchHeadphones extends BaseTest {
     public SearchResultsPage searchResultsPageObject = new SearchResultsPage();
     public MainPage mainPageObject = new MainPage();
-    @Test
 
+    @Test
     public void headphonesFounded(){
-        mainPageObject.searchObject.searchField.setValue("Навушники");
-        mainPageObject.searchObject.searchButton.click();
-        searchResultsPageObject.headerObject.pageTitle.getText().equals("Навушники");
-        assert searchResultsPageObject.listOfItemsObject.amountOfItems.size() == 24;
-        assertTrue(searchResultsPageObject.paginationObject.lastPaginationCount() > 3);
+        mainPageObject.search.searchField.setValue("Навушники");
+        mainPageObject.search.searchButton.click();
+        searchResultsPageObject.header.pageTitle.getText().equals("Навушники");
+        assert searchResultsPageObject.productsList.amountOfItems.size() == 24;
+        assertTrue(searchResultsPageObject.pagination.lastPaginationCount() > 3);
     }
 
 }
