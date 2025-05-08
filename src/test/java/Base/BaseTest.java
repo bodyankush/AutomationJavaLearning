@@ -2,26 +2,15 @@ package Base;
 
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.BeforeMethod;
-import java.util.Properties;
-import java.io.InputStream;
-import java.io.IOException;
+import config.ProjectConfig;
+import org.aeonbits.owner.ConfigFactory;
 
 public class BaseTest {
-    public static String baseUrl;
+    protected static final ProjectConfig config = ConfigFactory.create(ProjectConfig.class);
 
-    static {
-        try (InputStream input = BaseTest.class.getClassLoader().getResourceAsStream("config.properties")) {
-            Properties prop = new Properties();
-            prop.load(input);
-            baseUrl = prop.getProperty("url");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
     @BeforeMethod
-
     public void openSite() {
-        Selenide.open(BaseTest.baseUrl);
+        Selenide.open(config.prodUrl());
     }
 
 }
